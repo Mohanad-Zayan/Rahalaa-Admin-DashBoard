@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+
+		nav {
+			background-color: #666;
+			color: #fff;
+			padding: 10px;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav li {
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		table th, table td {
+			padding: 10px;
+			text-align: left;
+			border: 1px solid #ddd;
+		}
+
+		form {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid #ddd;
+			background-color: #f9f9f9;
+		}
+
+		form label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		form input[type="text"], form input[type="email"], form select, form textarea {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border: 1px solid #ddd;
+		}
+
+		form input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		form input[type="submit"]:hover {
+			background-color: #666;
+		}
+        .container{
+            padding: 1rem;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Admin Dashboard</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">Users</a></li>
+			<li><a href="#">Restaraunts</a></li>
+			<li><a href="#">Hotels</a></li>
+			<li><a href="#">Attractions</a></li>
+
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</nav>
+
+
+	<main class="container">
+        <!-- Users  -->
+        <!-- table -->
+        
+		<section>
+			<h2>Users</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th>passwordChangedAt</th>
+						<th>passwordRestToken</th>
+						<th>passwordResetExpiresIn</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John Doe</td>
+						<td>john@example.com</td>
+						<td>Admin</td>
+						<td>2020 / 4 / 4</td>
+						<td>2020 / 4 / 4</td>
+						<td>2020 / 4 / 4</td>
+						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+					</tr>
+					<tr>
+						<td>Jane Smith</td>
+						<td>jane@example.com</td>
+						<td>User</td>
+						<td>2020 / 4 / 4</td>
+						<td>2020 / 4 / 4</td>
+						<td>2020 / 4 / 4</td>
+						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+        
+        <!-- form -->
+		<section>
+			<h2>Add User</h2>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="role">Role:</label>
+				<select id="role" name="role" required>
+					<option value="">Select Role</option>
+					<option value="user">User</option>
+					<option value="user">Admin</option>
+					<option value="buissness_owner">Business Owner</option>
+				</select>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" minlength="8" required>
+                <br>
+                <br>
+				<label for="passwordConfirm">Confirm Password:</label>
+				<input type="password" id="passwordConfirm" name="passwordConfirm" minlength="8" required>
+                <br>
+                <br>
+				<input type="submit" value="Add User">
+			</form>
+		</section>
+
+        <br>
+        <hr>
+        <br>
+        
+        <!-- Hotels  -->
+		<section>
+            <h2>Hotels</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>City</th>
+                  <th>Image</th>
+                  <th>Price Level</th>
+                  <th>Rating</th>
+                  <th>Number of Reviews</th>
+                  <th>Hotel Class</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Location</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hotel Name</td>
+                  <td>Hotel City</td>
+                  <td>Hotel Image</td>
+                  <td>Hotel Price Level</td>
+                  <td>Hotel Rating</td>
+                  <td>Number of Hotel Reviews</td>
+                  <td>Hotel Class</td>
+                  <td>Hotel Phone</td>
+                  <td>Hotel Address</td>
+                  <td>Hotel Location</td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h2>Add Hotel</h2>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city" required>
+              <label for="image">Image:</label>
+              <input type="text" id="image" name="image">
+              <label for="priceLevel">Price Level:</label>
+              <select id="priceLevel" name="priceLevel">
+                <option value="">Select Price Level</option>
+                <option value="$">Low</option>
+                <option value="$$" selected>Medium</option>
+                <option value="$$$">High</option>
+              </select>
+              <label for="rating">Rating:</label>
+              <input type="number" id="rating" name="rating" step="0.1" min="1" max="5" value="4.5">
+              <label for="numberOfReviews">Number of Reviews:</label>
+              <input type="number" id="numberOfReviews" name="numberOfReviews" value="0">
+              <label for="hotelClass">Hotel Class:</label>
+              <input type="number" id="hotelClass" name="hotelClass" step="0.1" min="0" max="5" value="0">
+              <label for="phone">Phone:</label>
+              <input type="text" id="phone" name="phone" unique>
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address">
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location">
+              <input type="submit" value="Add Hotel">
+            </form>
+          </section>
+        <br>
+        <hr>
+        <br>
+
+        <!-- Restraunsts  -->
+        <section>
+            <h2>Restaurants</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Image</th>
+                  <th>Price Level</th>
+                  <th>Rating</th>
+                  <th>Phone</th>
+                  <th>Cuisine</th>
+                  <th>Location</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Restaurant Name</td>
+                  <td>Restaurant Image</td>
+                  <td>Restaurant Price Level</td>
+                  <td>Restaurant Rating</td>
+                  <td>Restaurant Phone</td>
+                  <td>Restaurant Cuisine</td>
+                  <td>Restaurant Location</td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          
+          <section>
+            <h2>Add Restaurant</h2>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="image">Image:</label>
+              <input type="text" id="image" name="image">
+              
+              <label for="priceLevel">Price Level:</label>
+              <select id="priceLevel" name="priceLevel">
+                <option value="">Select Price Level</option>
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+              </select>
+              
+              <label for="rating">Rating:</label>
+              <input type="number" id="rating" name="rating" min="1" max="5" step="0.1">
+              
+              <label for="phone">Phone:</label>
+              <input type="text" id="phone" name="phone" required>
+              
+              <label for="cuisine">Cuisine:</label>
+              <input type="text" id="cuisine" name="cuisine">
+              
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location">
+              
+              <input type="submit" value="Add Restaurant">
+            </form>
+          </section>
+        <br>
+        <hr>
+        <br>
+        <!-- Attractions  -->
+        <section>
+            <h2>Attractions</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Image</th>
+                  <th>Rating</th>
+                  <th>Number of Reviews</th>
+                  <th>Description</th>
+                  <th>Location</th>
+                  <th>Activity Descriptors</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Attraction Name</td>
+                  <td>Attraction Image</td>
+                  <td>Attraction Rating</td>
+                  <td>Attraction Number of Reviews</td>
+                  <td>Attraction Description</td>
+                  <td>Attraction Location</td>
+                  <td>Attraction Activity Descriptors</td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h2>Add Attraction</h2>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="image">Image:</label>
+              <input type="text" id="image" name="image">
+              
+              <label for="rating">Rating:</label>
+              <input type="number" id="rating" name="rating" min="1" max="5" step="0.1" value="4.5">
+              
+              <label for="num_reviews">Number of Reviews:</label>
+              <input type="number" id="num_reviews" name="num_reviews" value="0">
+              
+              <label for="description">Description:</label>
+              <textarea id="description" name="description"></textarea>
+              
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location">
+              
+              <label for="activityDesctiptor">Activity Descriptors:</label>
+              <input type="text" id="activityDesctiptor" name="activityDesctiptor">
+              
+              <input type="submit" value="Add Attraction">
+            </form>
+          </section>
+	</main>
+</body>
+</html>
